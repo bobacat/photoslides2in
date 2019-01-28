@@ -53,8 +53,8 @@ from PIL import Image
 import RPi.GPIO as GPIO
 
 # Display resolution
-EPD_WIDTH       = 400
-EPD_HEIGHT      = 300
+EPD_WIDTH       = 250
+EPD_HEIGHT      = 122
 
 # GDEW042T2 commands
 PANEL_SETTING                               = 0x00
