@@ -37,7 +37,7 @@ def main():
     # For simplicity, the arguments are explicit numerical coordinates
     image = Image.new('1', (epd2in13.EPD_WIDTH, epd2in13.EPD_HEIGHT), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf', 12)
+    font = ImageFont.truetype('ClearSans-Regular.ttf', 12)
     draw.rectangle((0, 10, 128, 30), fill = 0)
     draw.text((30, 14), 'Hello world!', font = font, fill = 255)
     draw.text((30, 36), 'e-Paper Demo', font = font, fill = 0)
@@ -50,7 +50,7 @@ def main():
     draw.arc((70, 60, 130, 120), 0, 360, fill = 0)
     draw.rectangle((16, 130, 56, 180), fill = 0)
     draw.chord((70, 130, 130, 190), 0, 360, fill = 0)
-    
+
     epd.clear_frame_memory(0xFF)
     epd.set_frame_memory(image, 0, 0)
     epd.display_frame()
@@ -65,7 +65,7 @@ def main():
  # and once the display is refreshed, the memory area will be auto-toggled,
  # i.e. the next action of SetFrameMemory will set the other memory area
  # therefore you have to set the frame memory twice.
- ##     
+ ##
     epd.set_frame_memory(image, 0, 0)
     epd.display_frame()
     epd.set_frame_memory(image, 0, 0)
@@ -73,7 +73,7 @@ def main():
 
     time_image = Image.new('1', (96, 32), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(time_image)
-    font = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf', 32)
+    font = ImageFont.truetype('ClearSans-Regular.ttf', 32)
     image_width, image_height  = time_image.size
     while (True):
         # draw a rectangle to clear the image
